@@ -655,7 +655,7 @@ namespace PdfSharp.Pdf
             return value.HasValue ? value.Value.ToString("#.##", CultureInfo.InvariantCulture) : "null";
         }
 
-        internal override void WriteObject(PdfWriter writer)
+        protected override void WriteObject(PdfWriter writer)
         {
 #if DEBUG
             writer.WriteRaw("% Title = " + FilterUnicode(Title) + "\n");
